@@ -37,7 +37,7 @@ def merge_regions_and_departments(regions, departments):
         }
     d = departments.rename(columns=cols_d)
 
-    return r.merge(d['code_dep', 'name_dep', 'code_reg'], on=['code_reg'])
+    return r.merge(d[['code_dep', 'name_dep', 'code_reg']], on=['code_reg'])
 
 
 def merge_referendum_and_areas(referendum, regions_and_departments):
